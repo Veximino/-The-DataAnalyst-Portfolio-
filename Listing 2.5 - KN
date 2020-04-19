@@ -1,0 +1,67 @@
+## Listing 2.5
+
+patientdata[1:2]
+
+patientdata[c("diabetes", "status")]
+
+patientdata$age
+
+#Ex
+
+table(patientdata$diabetes, patientdata$status)
+
+#mtcars attach/detach
+#Version1
+summary(mtcars$mpg)
+
+plot(mtcars$mpg, mtcars$disp)
+
+plot(mtcars$mpg, mtcars$wt)
+
+#Version2
+
+attach(mtcars)
+
+summary(mpg)
+
+plot(mpg, disp)
+
+plot(mpg, wt)
+
+detach(mtcars)
+
+
+mpg <- c(25, 36, 47)
+
+attach(mtcars)
+
+plot(mpg, wt)
+
+mpg
+
+
+with(mtcars, {
+  summary(mpg, disp, wt)
+  plot(mpg, disp)
+  plot(mpg, wt)
+})
+
+with(mtcars, {
+  stats <- summary(mpg)
+  stats
+})
+
+stats
+
+with(mtcars, {
+  nokeepstats <- summary(mpg)
+  keepstats <<- summary(mpg)
+})
+
+nokeepstats
+
+keepstats
+
+
+
+
