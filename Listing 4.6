@@ -1,0 +1,32 @@
+###Listing 4.6
+
+newdata <- leadership[1:3,]
+
+newdata <- leadership[which(leadership$gender=="M" &
+                              leadership$age > 30),]
+
+attach(leadership)
+
+newdata <- leadership[which(gender=='M' & age > 30),]
+
+detach(leadership)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
