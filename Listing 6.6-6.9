@@ -1,0 +1,63 @@
+###Listing6.6 -6.9
+##Listing 6.6
+
+par(mfrow=c(2,2))
+
+hist(mtcars$mpg)
+
+hist(mtcars$mpg,
+     breaks=12, ???
+     col="red",
+     xlab="Miles Per Gallon",
+     main="Colored histogram with 12 bins")
+
+hist(mtcars$mpg, ???
+     freq=FALSE,
+     breaks=12,
+     col="red",
+     xlab="Miles Per Gallon",
+     main="Histogram, rug plot, density curve")
+rug(jitter(mtcars$mpg))
+lines(density(mtcars$mpg), col="blue", lwd=2)
+
+
+x <- mtcars$mpg
+h<-hist(x, 
+        breaks=12,
+        col="red",
+        xlab="Miles Per Gallon",
+        main="Histogram with normal curve and box")
+xfit<-seq(min(x), max(x), length=40)
+yfit<-dnorm(xfit, mean=mean(x), sd=sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col="blue", lwd=2)
+box()
+
+rug(jitter(mtcars$mpag, amount=0.01))
+
+##Listing 6.9
+
+mtcars$cyl.f <- factor(mtcars$cyl,
+                       levels=c(4,6,8),
+                       labels=c("4","6","8"))
+
+mtcars$am.f <- factor(mtcars$am,
+                      levels=c(0,1),
+                      labels=c("auto", "standard"))
+boxplot(mpg ~ am.f *cyl.f,
+        data=mtcars,
+        varwidth=TRUE,
+        col=c("gold","darkgreen"),
+        main="MPG Distribution by Auto Type",
+        xlab="Auto Type")
+
+
+
+
+
+
+
+
+
+
+
